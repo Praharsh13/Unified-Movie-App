@@ -1,0 +1,39 @@
+import express from "express";
+const router = express.Router();
+
+
+import { createMovie,
+    getMoviesForUser,
+    getSpecificMovie,
+    updateMovie,
+    movieReview,
+    deleteMovie,
+    deleteComment,
+    getNewMovies,
+    getTopMovies,
+getRandomMovies,
+getRecommendedMovies,getAllMovies,getSpecificUserMovie, getMoviesForUserott, searchMovieInDatabaseAndApi} from "../controllers/movie.controller.js";
+
+// Middlewares
+import { userAuthentication,ifAdmin } from "../middlewares/auth.middleware.js";
+import checkId from "../middlewares/checkId.js";
+//Users
+router.get("/user-movie",userAuthentication,getMoviesForUser);
+router.get("/user-movie-search/:id",userAuthentication,getSpecificUserMovie);
+router.get("/new-movies",userAuthentication, getNewMovies);
+router.get("/top-movies",userAuthentication, getTopMovies);
+router.get("/random-movies",userAuthentication, getRandomMovies);
+router.get("/recomended-movies",userAuthentication, getRecommendedMovies);
+router.get("/user-movieall-search/:id",userAuthentication,ifAdmin,getSpecificMovie);
+router.get("/user-movieott",userAuthentication,getMoviesForUserott);
+router.get("/user-movieottsearch/:title",userAuthentication,searchMovieInDatabaseAndApi);
+// Admin
+router.post("/create-movie", userAuthentication, ifAdmin, createMovie);
+router.put("/update-movie/:id", userAuthentication, ifAdmin, updateMovie);
+router.delete("/delete-movie/:id", userAuthentication, ifAdmin, deleteMovie);
+router.get("/all-movie", userAuthentication, ifAdmin, getAllMovies);
+
+//Route for adding reviews
+router.post("/:id/reviews", userAuthentication, checkId, movieReview);
+router.delete("/delete-comment", userAuthentication, ifAdmin, deleteComment);
+export default router;

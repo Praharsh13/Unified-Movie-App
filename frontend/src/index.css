@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: linear-gradient(135deg, #1b1b1f, #2c2c34);
+  color: #e0e0e0;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+
+input,
+textarea {
+  color: #000;
+}
+
+select option {
+  color: black;
+}
