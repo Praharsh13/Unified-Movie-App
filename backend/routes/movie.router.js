@@ -20,7 +20,7 @@ import checkId from "../middlewares/checkId.js";
 //Users
 router.get("/user-movie",userAuthentication,getMoviesForUser);
 router.get("/user-movie-search/:id",userAuthentication,getSpecificUserMovie);
-router.get("/new-movies",attachUserIfPresent, getNewMovies);
+router.get("/new-movies",userAuthentication, getNewMovies);
 router.get("/top-movies",attachUserIfPresent, getTopMovies);
 router.get("/random-movies",attachUserIfPresent, getRandomMovies);
 router.get("/recomended-movies",attachUserIfPresent, getRecommendedMovies);
