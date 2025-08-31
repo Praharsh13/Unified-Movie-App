@@ -32,7 +32,7 @@ const getAllMovies = async (req, res) => {
 const getMoviesForUser = async (req, res) => {
     try {
       // Get the user's ID from the request (assuming user is authenticated and req.user is set)
-      const userId = req.user._id;
+      const userId = req.user?._id;
   
       // Fetch user details to get the ottSubscribed array
       const user = await User.findById(userId);
@@ -387,7 +387,7 @@ const getMoviesForUser = async (req, res) => {
   const getNewMovies = async (req, res) => {
     try {
       // Get the user's ID from the request (assuming the user is authenticated and req.user is set)
-      const userId = req.user._id;
+      const userId = req.user?._id;
   
       // Fetch the user's details to get the ottSubscribed array
       const user = await User.findById(userId);
@@ -420,7 +420,7 @@ const getMoviesForUser = async (req, res) => {
   const getTopMovies = async (req, res) => {
     try {
       // Get the user's ID from the request (assuming the user is authenticated)
-      const userId = req.user._id;
+      const userId = req.user?._id;
   
       // Fetch the user's details to get the ottSubscribed array
       const user = await User.findById(userId);
@@ -453,7 +453,7 @@ const getMoviesForUser = async (req, res) => {
   const getRandomMovies = async (req, res) => {
     try {
       // Get the user's ID from the request (assuming the user is authenticated)
-      const userId = req.user._id;
+      const userId = req.user?._id;
   
       // Fetch the user's details to get the ottSubscribed array
       const user = await User.findById(userId);
@@ -485,7 +485,7 @@ const getMoviesForUser = async (req, res) => {
   const getRecommendedMovies = async (req, res) => {
     try {
       // Get the user's ID from the request (assuming the user is authenticated)
-      const userId = req.user._id;
+      const userId = req.user?._id;
   
       // Fetch the user's details to get the ottSubscribed and favoriteGenres arrays
       const user = await User.findById(userId);
