@@ -64,6 +64,10 @@ const signInUser=asyncHandler(async(req,res)=>{
         if(checkPassword){
             //create token for authentication
             createToken(res,userExist._id);
+            res.json({
+                token,
+                user: { id: userExist._id, username: userExist.username, isAdmin: userExist.isAdmin }
+              });
             res.status(201).json({
                 _id:userExist._id,
                 username:userExist.username,
