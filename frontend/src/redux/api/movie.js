@@ -11,7 +11,7 @@ export const moviesApiSlice = apiSlice.injectEndpoints({
       }),
     createMovie: builder.mutation({
       query: (newMovie) => ({
-        url: "http://localhost:3002/movieapp/movies/create-movie",
+        url: "https://unified-movie-app.onrender.com/movieapp/movies/create-movie",
         method: "POST",
         body: newMovie,
       }),

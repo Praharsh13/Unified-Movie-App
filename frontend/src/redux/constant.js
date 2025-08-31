@@ -5,7 +5,7 @@ export const USERS_URL = `${import.meta.env.VITE_API_URL}/movieapp/users`; // Th
 export const GENRE_URL=`${import.meta.env.VITE_API_URL}/movieapp/genre` ;
 
 
-export const MOVIE_URL = `${import.meta.env.VITE_API_URL}/movieapp/movies`;//This for movies
+export const MOVIE_URL = "https://unified-movie-app.onrender.com/movieapp/movies";//This for movies
 
 export const UPLOAD_URL =`${import.meta.env.VITE_API_URL}/movieapp/upload`; //this is for upload
 

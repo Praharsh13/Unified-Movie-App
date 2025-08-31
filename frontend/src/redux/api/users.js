@@ -27,7 +27,7 @@ export const userApiSlice=apiSlice.injectEndpoints({
 
           profile: builder.mutation({
             query: (data) => ({
-              url: "http://localhost:3002/movieapp/users/userprofile",
+              url: "https://unified-movie-app.onrender.com/movieapp/users/userprofile",
               method: "POST",
               body: data,
               credentials: 'include'
